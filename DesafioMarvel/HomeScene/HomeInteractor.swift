@@ -14,7 +14,7 @@ import UIKit
 import RxSwift
 
 protocol HomeBusinessLogic {
-  func doSomething(request: Home.Something.Request)
+  func getCharacters(request: Home.Request)
 }
 
 protocol HomeDataStore {
@@ -24,16 +24,27 @@ protocol HomeDataStore {
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
   var presenter: HomePresentationLogic?
   var worker: HomeWorker?
+  let disposeBag = DisposeBag()
   //var name: String = ""
 
   // MARK: Do something
   
-  func doSomething(request: Home.Something.Request) {
+  func getCharacters(request: Home.Request) {
     worker = HomeWorker()
     worker?.doSomeWork()
     
-    
-    let response = Home.Something.Response()
-    presenter?.presentSomething(response: response)
+    MarvelManager.getCharactersList().subscribe(onNext: { (result) in
+      
+      if let result =  result.data?.results {
+        let response = Home.Response(characters: result)
+        self.presenter?.presentCharacters(response: response)
+      }
+      
+    }, onError: { (error) in
+      print(error)
+    }, onCompleted: {
+      print("onCompleted")
+    }).disposed(by: disposeBag)
+ 
   }
 }

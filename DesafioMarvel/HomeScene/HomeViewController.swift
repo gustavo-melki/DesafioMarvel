@@ -12,9 +12,10 @@
 
 import UIKit
 import RxSwift
+import SDWebImage
 
 protocol HomeDisplayLogic: class {
-  func displaySomething(viewModel: Home.Something.ViewModel)
+  func displayCharacters(viewModel: Home.ViewModel)
 }
 
 class HomeViewController: UIViewController, HomeDisplayLogic {
@@ -64,34 +65,44 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    doSomething()
+    getCharacters()
   }
   
   // MARK: Do something
   
-  //@IBOutlet weak var nameTextField: UITextField!
+
+  @IBOutlet weak var collectionView: UICollectionView!
   
-  func doSomething() {
-    let request = Home.Something.Request()
-    interactor?.doSomething(request: request)
+  
+  var characters = [Character]()
+  
+  func getCharacters() {
+    let request = Home.Request()
+    interactor?.getCharacters(request: request)
   }
   
-  func displaySomething(viewModel: Home.Something.ViewModel) {
-    //nameTextField.text = viewModel.name
+  func displayCharacters(viewModel: Home.ViewModel) {
+    print(viewModel)
+    characters = viewModel.characters
+    self.collectionView.reloadData()
   }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 10
+    return characters.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeCollectionViewCell
     
-    cell.nameLabel.text = "SUPER HEROI"
+    cell.nameLabel.text = characters[indexPath.row].name
+    
+    let url = URL(string: (characters[indexPath.row].thumbnail?.path)! + "portrait_medium" + (characters[indexPath.row].thumbnail?._extension)!)
+    
+    cell.characterImage.sd_setImage(with: url, completed: nil)
     
     return cell
   }

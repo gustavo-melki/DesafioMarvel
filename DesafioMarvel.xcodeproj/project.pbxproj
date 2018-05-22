@@ -23,6 +23,7 @@
 		1A114DEF20AE290C00960679 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A114DE920AE290C00960679 /* HomeViewController.swift */; };
 		1A114DF020AE290C00960679 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A114DEA20AE290C00960679 /* HomeWorker.swift */; };
 		1A114DF320AE2F4F00960679 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A114DF220AE2F4F00960679 /* HomeCollectionViewCell.swift */; };
+		1AD7C3BD20B442FD00D15C51 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD7C3BC20B442FD00D15C51 /* Image.swift */; };
 		B22344926BDE430D1340854C /* Pods_DesafioMarvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0ABD1C2CCAD9B43F5F63DB3 /* Pods_DesafioMarvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		1A114DE920AE290C00960679 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1A114DEA20AE290C00960679 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
 		1A114DF220AE2F4F00960679 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		1AD7C3BC20B442FD00D15C51 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		76CE71D5140C26BB474D7318 /* Pods-DesafioMarvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioMarvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-DesafioMarvel/Pods-DesafioMarvel.release.xcconfig"; sourceTree = "<group>"; };
 		96D0A14E389F7A83FD03FD18 /* Pods-DesafioMarvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioMarvel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DesafioMarvel/Pods-DesafioMarvel.debug.xcconfig"; sourceTree = "<group>"; };
 		C0ABD1C2CCAD9B43F5F63DB3 /* Pods_DesafioMarvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioMarvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,7 @@
 				1A00BD3020ACE24300EC69E3 /* CharacterDataWrapper.swift */,
 				1A00BD3220ACE26700EC69E3 /* CharacterDataContainer.swift */,
 				1A00BD2820ACDD3200EC69E3 /* Character.swift */,
+				1AD7C3BC20B442FD00D15C51 /* Image.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -268,6 +272,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -288,6 +293,7 @@
 				1A114DEB20AE290C00960679 /* HomeInteractor.swift in Sources */,
 				1A114DF320AE2F4F00960679 /* HomeCollectionViewCell.swift in Sources */,
 				1A00BD2920ACDD3200EC69E3 /* Character.swift in Sources */,
+				1AD7C3BD20B442FD00D15C51 /* Image.swift in Sources */,
 				1A00BD2420ACDC2300EC69E3 /* MarvelService.swift in Sources */,
 				1A00BD1120ACDA2700EC69E3 /* AppDelegate.swift in Sources */,
 				1A114DF020AE290C00960679 /* HomeWorker.swift in Sources */,
@@ -440,10 +446,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DesafioMarvel/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gustavoMelki.DesafioMarvel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -458,10 +461,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DesafioMarvel/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gustavoMelki.DesafioMarvel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

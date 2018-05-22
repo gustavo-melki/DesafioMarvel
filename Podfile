@@ -7,5 +7,6 @@ target 'DesafioMarvel' do
 
   pod 'Moya/RxSwift', '~> 11.0'
   pod 'CryptoSwift'
+  pod 'SDWebImage'
   
 end

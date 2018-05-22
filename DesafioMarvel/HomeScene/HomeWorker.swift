@@ -15,18 +15,7 @@ import RxSwift
 
 
 class HomeWorker {
-  let disposeBag = DisposeBag()
-  
-  func doSomeWork() {
-    
-    MarvelManager.getCharactersList().subscribe(onNext: { (result) in
-      print(result.data?.results)
-      
-    }, onError: { (error) in
-      print(error)
-    }, onCompleted: {
-      print("onCompleted")
-    }).disposed(by: disposeBag)
+  func doSomeWork(){
     
   }
 }

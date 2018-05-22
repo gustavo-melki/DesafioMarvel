@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,8 +40,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="157" height="143"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FV2-ez-MSb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="157" height="106"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdI-AG-v96">
-                                                    <rect key="frame" x="57" y="61" width="42" height="21"/>
+                                                    <rect key="frame" x="8" y="114" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -48,10 +52,15 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="DdI-AG-v96" firstAttribute="centerX" secondItem="vZS-Zj-D5d" secondAttribute="centerX" id="QKm-Az-SBt"/>
-                                            <constraint firstItem="DdI-AG-v96" firstAttribute="centerY" secondItem="vZS-Zj-D5d" secondAttribute="centerY" id="wip-mO-fIG"/>
+                                            <constraint firstItem="FV2-ez-MSb" firstAttribute="leading" secondItem="vZS-Zj-D5d" secondAttribute="leading" id="658-xF-RBz"/>
+                                            <constraint firstItem="DdI-AG-v96" firstAttribute="leading" secondItem="vZS-Zj-D5d" secondAttribute="leadingMargin" id="Jhy-z5-H8e"/>
+                                            <constraint firstItem="DdI-AG-v96" firstAttribute="bottom" secondItem="vZS-Zj-D5d" secondAttribute="bottomMargin" id="RHU-0s-kiL"/>
+                                            <constraint firstAttribute="trailing" secondItem="FV2-ez-MSb" secondAttribute="trailing" id="XfK-87-8C7"/>
+                                            <constraint firstItem="DdI-AG-v96" firstAttribute="top" secondItem="FV2-ez-MSb" secondAttribute="bottom" constant="8" id="wZl-An-F8p"/>
+                                            <constraint firstItem="FV2-ez-MSb" firstAttribute="top" secondItem="vZS-Zj-D5d" secondAttribute="top" id="xpA-21-gT3"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="characterImage" destination="FV2-ez-MSb" id="IEl-FR-esd"/>
                                             <outlet property="nameLabel" destination="DdI-AG-v96" id="jB4-PY-DaU"/>
                                         </connections>
                                     </collectionViewCell>
@@ -75,6 +84,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Characters" id="hSw-ih-O2u"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Hz4-EE-ATp" id="lu4-NV-FfG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,6 +129,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ayM-kP-2Ya" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="482-rQ-Y3Y">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

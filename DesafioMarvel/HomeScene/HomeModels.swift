@@ -14,16 +14,14 @@ import UIKit
 
 enum Home {
   // MARK: Use cases
-  
-  enum Something {
     struct Request {
-      var name: String
+
     }
     struct Response {
-      
+      var characters: [Character]
+
     }
     struct ViewModel {
-      
+      var characters: [Character]
     }
-  }
 }

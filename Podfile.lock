@@ -9,10 +9,14 @@ PODS:
     - RxSwift (~> 4.0)
   - Result (3.2.4)
   - RxSwift (4.1.2)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
 
 DEPENDENCIES:
   - CryptoSwift
   - Moya/RxSwift (~> 11.0)
+  - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
@@ -20,7 +24,8 @@ SPEC CHECKSUMS:
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
 
-PODFILE CHECKSUM: 834b98b82a09536d3c81bb9ed0472f3c56ea919e
+PODFILE CHECKSUM: 47892b78692cf283ce53a32dc39291e147b98bb8
 
 COCOAPODS: 1.4.0
