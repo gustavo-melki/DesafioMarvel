@@ -98,13 +98,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeCollectionViewCell
     
+    let url = URL(string: (characters[indexPath.row].thumbnail?.path)! + "/portrait_medium." + (characters[indexPath.row].thumbnail?._extension)!)
+    
     cell.nameLabel.text = characters[indexPath.row].name
-    
-    let url = URL(string: (characters[indexPath.row].thumbnail?.path)! + "portrait_medium" + (characters[indexPath.row].thumbnail?._extension)!)
-    
-    cell.characterImage.sd_setImage(with: url, completed: nil)
+    cell.characterImage.sd_setImage(with: url!, completed: nil)
     
     return cell
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
   }
   
   
