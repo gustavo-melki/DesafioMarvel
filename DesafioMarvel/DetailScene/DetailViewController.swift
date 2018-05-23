@@ -12,34 +12,29 @@
 
 import UIKit
 
-protocol DetailDisplayLogic: class
-{
-  func displaySomething(viewModel: Detail.Something.ViewModel)
+protocol DetailDisplayLogic: class {
+  func displaySomething(viewModel: Detail.ViewModel)
 }
 
-class DetailViewController: UIViewController, DetailDisplayLogic
-{
+class DetailViewController: UIViewController, DetailDisplayLogic {
   var interactor: DetailBusinessLogic?
   var router: (NSObjectProtocol & DetailRoutingLogic & DetailDataPassing)?
 
   // MARK: Object lifecycle
   
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
+  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     setup()
   }
   
-  required init?(coder aDecoder: NSCoder)
-  {
+  required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setup()
   }
   
   // MARK: Setup
   
-  private func setup()
-  {
+  private func setup() {
     let viewController = self
     let interactor = DetailInteractor()
     let presenter = DetailPresenter()
@@ -54,8 +49,7 @@ class DetailViewController: UIViewController, DetailDisplayLogic
   
   // MARK: Routing
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let scene = segue.identifier {
       let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
       if let router = router, router.responds(to: selector) {
@@ -65,9 +59,11 @@ class DetailViewController: UIViewController, DetailDisplayLogic
   }
   
   // MARK: View lifecycle
+    
+  @IBOutlet weak var characterImage: UIImageView!
+  @IBOutlet weak var characterDescription: UITextView!
   
-  override func viewDidLoad()
-  {
+  override func viewDidLoad() {
     super.viewDidLoad()
     doSomething()
   }
@@ -76,14 +72,12 @@ class DetailViewController: UIViewController, DetailDisplayLogic
   
   //@IBOutlet weak var nameTextField: UITextField!
   
-  func doSomething()
-  {
-    let request = Detail.Something.Request()
+  func doSomething() {
+    let request = Detail.Request()
     interactor?.doSomething(request: request)
   }
   
-  func displaySomething(viewModel: Detail.Something.ViewModel)
-  {
+  func displaySomething(viewModel: Detail.ViewModel) {
     //nameTextField.text = viewModel.name
   }
 }

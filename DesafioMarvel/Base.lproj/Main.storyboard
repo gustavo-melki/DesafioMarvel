@@ -94,6 +94,7 @@
                     <navigationItem key="navigationItem" title="Characters" id="hSw-ih-O2u"/>
                     <connections>
                         <outlet property="collectionView" destination="Hz4-EE-ATp" id="lu4-NV-FfG"/>
+                        <segue destination="qB7-tn-eFc" kind="show" identifier="segueToDetail" id="5cw-0S-fkE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -103,17 +104,42 @@
         <!--Detail View Controller-->
         <scene sceneID="b0U-Gh-Slw">
             <objects>
-                <viewController id="qB7-tn-eFc" customClass="DetailViewController" customModule="DesafioMarvel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailVC" id="qB7-tn-eFc" customClass="DetailViewController" customModule="DesafioMarvel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1BY-tp-ziH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X1c-3d-8TV">
+                                <rect key="frame" x="20" y="94" width="335" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="MI2-S3-uoL"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Key-ja-9qr">
+                                <rect key="frame" x="20" y="282" width="339" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="X1c-3d-8TV" firstAttribute="top" secondItem="AZ9-ol-Ju9" secondAttribute="top" constant="30" id="HXq-B7-xhw"/>
+                            <constraint firstItem="AZ9-ol-Ju9" firstAttribute="trailing" secondItem="X1c-3d-8TV" secondAttribute="trailing" constant="20" id="cuh-At-dTs"/>
+                            <constraint firstItem="X1c-3d-8TV" firstAttribute="leading" secondItem="AZ9-ol-Ju9" secondAttribute="leading" constant="20" id="s7z-EN-r2j"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="AZ9-ol-Ju9"/>
                     </view>
+                    <connections>
+                        <outlet property="characterDescription" destination="Key-ja-9qr" id="1PK-HV-JM9"/>
+                        <outlet property="characterImage" destination="X1c-3d-8TV" id="X2X-mR-vZR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s2M-7Z-e51" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3354" y="-935"/>
+            <point key="canvasLocation" x="3352.8000000000002" y="-935.08245877061472"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="kC3-ot-fsc">

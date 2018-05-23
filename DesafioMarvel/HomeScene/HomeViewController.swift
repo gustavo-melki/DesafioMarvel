@@ -86,6 +86,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     characters = viewModel.characters
     self.collectionView.reloadData()
   }
+  
+  
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -107,6 +109,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    print(characters[indexPath.row])
     
   }
   

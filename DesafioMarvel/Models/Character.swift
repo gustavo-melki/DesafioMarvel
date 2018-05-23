@@ -19,5 +19,7 @@ public struct Character: Codable {
     //case comics
     //case series
   }
+
+  
 }
 
