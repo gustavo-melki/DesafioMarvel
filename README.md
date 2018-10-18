@@ -6,7 +6,7 @@
 - Arquitetura CleanSwift (https://clean-swift.com)
 - Tela Home
 
-### Em Anadamento
+### Em Andamento
 
 - Tela de Detalhes
 - Favoritos
